@@ -13,6 +13,55 @@
 /*              V A R I A B L E              */
 /*********************************************/
 /* other variable */
+/********* LOADER *********/
+@keyframes loader {
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+svg :nth-child(1) {
+  animation: loaderSvg 3s ease 0.1s infinite;
+}
+svg :nth-child(2) {
+  animation: loaderSvg 3s ease 0.2s infinite;
+}
+svg :nth-child(3) {
+  animation: loaderSvg 3s ease 0.3s infinite;
+}
+svg :nth-child(4) {
+  animation: loaderSvg 3s ease 0.4s infinite;
+}
+svg :nth-child(5) {
+  animation: loaderSvg 3s ease 0.5s infinite;
+}
+svg :nth-child(6) {
+  animation: loaderSvg 3s ease 0.6s infinite;
+}
+svg :nth-child(7) {
+  animation: loaderSvg 3s ease 0.7s infinite;
+}
+svg :nth-child(8) {
+  animation: loaderSvg 3s ease 0.8s infinite;
+}
+
+@keyframes loaderSvg {
+  40% {
+    stroke: rgb(255, 121, 218);
+    stroke-width: 2;
+  }
+  45% {
+    stroke: rgb(147, 86, 220);
+    stroke-width: 3;
+  }
+  50% {
+    stroke: rgb(255, 121, 218);
+    stroke-width: 5;
+    stroke-dashoffset: 300;
+  }
+}
 /********* HEART *********/
 @keyframes heartCheck {
   100% {
@@ -20,6 +69,42 @@
     background-size: 100% 100%;
   }
 }
+@keyframes checkIconeOnHover {
+  from {
+    transform: translateX(20px);
+    width: 0px;
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+/********* MENu *********/
+@keyframes slideLeftOnload {
+  from {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+main .menu:nth-child(1) {
+  animation: slideLeftOnload 3s ease 0.25s forwards;
+}
+main .menu:nth-child(2) {
+  animation: slideLeftOnload 3s ease 0.5s forwards;
+}
+main .menu:nth-child(3) {
+  animation: slideLeftOnload 3s ease 0.75s forwards;
+}
+main .menu:nth-child(4) {
+  animation: slideLeftOnload 3s ease 1s forwards;
+}
+main .menu:nth-child(5) {
+  animation: slideLeftOnload 3s ease 1.25s forwards;
+}
+
 /***** M O B I L E   V E R S I O N S **********/
 /***** General **********/
 * {
@@ -35,6 +120,31 @@
 body {
   background-color: rgb(246, 246, 246);
   margin: 0px;
+}
+
+/***** Loader **********/
+.loader {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  animation: loader 6s ease forwards;
+}
+.loader svg {
+  transform: scale(150%);
+  width: 100%;
+}
+.loader svg path {
+  fill-opacity: 2;
+  stroke: rgb(147, 86, 220);
+  fill: rgb(252, 252, 253);
+  stroke-width: 1;
+  stroke-dashoffset: 1;
+  stroke-dasharray: 300;
 }
 
 /***** Header **********/
@@ -85,6 +195,23 @@ header img {
   text-align: center;
   font-size: 18px;
   margin-bottom: 27px;
+}
+
+button {
+  width: 180px;
+  height: 50px;
+  border-radius: 25px;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(355deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
+  margin: 40px 0px;
+  border: rgb(53, 53, 53);
+  color: rgb(255, 255, 255);
+  transition: 100ms;
+}
+
+button:hover {
+  background: linear-gradient(335deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.15) 100%), linear-gradient(201deg, #9356DC -5.2%, #FF79DA 110.74%);
+  transform: scale(105%);
 }
 
 /***** list Section **********/
