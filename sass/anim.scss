@@ -7,6 +7,46 @@
 
 @import "variable";
 
+/********* LOADER *********/
+
+@keyframes loader{
+
+    90%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+$path-step: 0.1s;  
+
+svg{
+  $path-count: 8;   
+
+  @for $i from 1 through $path-count {
+    $delay: $i * $path-step;  
+    :nth-child(#{$i}) {
+      animation: loaderSvg 3s ease $delay infinite;  
+    }
+  }
+}
+
+@keyframes loaderSvg{
+    40%{
+        stroke: $seconndary;
+        stroke-width: 2;
+    }
+    45%{
+        stroke: $primary;
+        stroke-width: 3;
+    }
+    50%{
+        stroke: $seconndary;
+        stroke-width: 5;
+        stroke-dashoffset: 300;
+    }
+}
 /********* HEART *********/
 @keyframes heartCheck {
 
@@ -27,7 +67,7 @@
     }
 }
 
-/********* Menu *********/
+/********* MENu *********/
 
 @keyframes slideLeftOnload {
 
