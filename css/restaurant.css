@@ -1,3 +1,340 @@
+/*********************************************/
+/*                  F O N T                  */
+/*********************************************/
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+/*********************************************/
+/*             A N I M A T I O N             */
+/*********************************************/
+/*********************************************/
+/*              V A R I A B L E              */
+/*********************************************/
+/* other variable */
+/********* HEART *********/
+@keyframes heartCheck {
+  100% {
+    background-position-Y: 0;
+    background-size: 100% 100%;
+  }
+}
+@keyframes checkIconeOnHover {
+  from {
+    transform: translateX(20px);
+    width: 0px;
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+/********* Menu *********/
+@keyframes slideLeftOnload {
+  from {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+main .menu:nth-child(1) {
+  animation: slideLeftOnload 3s ease 0.25s forwards;
+}
+main .menu:nth-child(2) {
+  animation: slideLeftOnload 3s ease 0.5s forwards;
+}
+main .menu:nth-child(3) {
+  animation: slideLeftOnload 3s ease 0.75s forwards;
+}
+main .menu:nth-child(4) {
+  animation: slideLeftOnload 3s ease 1s forwards;
+}
+main .menu:nth-child(5) {
+  animation: slideLeftOnload 3s ease 1.25s forwards;
+}
 
+/***** M O B I L E   V E R S I O N S **********/
+/***** General **********/
+body {
+  margin: unset;
+  background: rgb(234, 234, 234);
+}
+
+/********** Header **********/
+header {
+  position: relative;
+  display: grid;
+  grid-template-columns: 10% 90%;
+  align-items: center;
+  padding: 14px 89px 13px 17px;
+  background-color: rgb(255, 255, 255);
+  z-index: 3;
+}
+header img {
+  width: 45%;
+  justify-self: center;
+}
+header .fa-arrow-left {
+  text-decoration: none;
+  color: black;
+  justify-self: start;
+}
+
+.background-img {
+  position: relative;
+  width: 100%;
+  background-position-y: center;
+  z-index: 1;
+}
+
+/********** Main Section **********/
+main {
+  border-radius: 40px 40px 0px 0px;
+  background: rgb(234, 234, 234);
+  position: relative;
+  top: -40px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 13px;
+  /********** Menu Sections **********/
+  /***** Button *****/
+}
+main .main-title {
+  padding: 32px 5px 20px 5px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  /***** Heart Button *****/
+}
+main .main-title h2 {
+  font-family: "Shrikhand";
+  font-weight: 200;
+  font-size: 24px;
+  text-wrap: nowrap;
+  margin: unset;
+}
+main .main-title .heart-btn {
+  position: relative;
+}
+main .main-title .heart-btn i {
+  display: flex;
+  align-items: center;
+}
+main .main-title .heart-btn input {
+  z-index: 3;
+  opacity: 0;
+}
+main .main-title .heart-btn i,
+main .main-title .heart-btn input {
+  position: absolute;
+  bottom: 3px;
+  right: 20px;
+  margin: unset;
+  width: 26px;
+  height: 26px;
+}
+main .main-title .heart-btn input:checked ~ .fill {
+  display: flex;
+}
+main .main-title .heart-btn input:checked ~ .empty {
+  display: none;
+}
+main .main-title .heart-btn .fill {
+  display: none;
+  background: linear-gradient(355deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
+  transform-origin: bottom;
+  background-size: 100% 0%;
+  background-position-y: 26px;
+  background-repeat: no-repeat;
+  animation: heartCheck 0.75s forwards;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+main .menu {
+  font-family: "Roboto", sans-serif;
+  padding: 0 13px;
+  width: 100%;
+  box-sizing: border-box;
+  opacity: 0;
+  /***** Card *****/
+}
+main .menu h3 {
+  font-size: 18px;
+  font-weight: 200;
+  border-bottom: 3px solid rgb(153, 226, 208);
+  width: 40px;
+}
+main .menu .card-menu {
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15.043px;
+  box-shadow: 0px 4.01149px 15.0431px 0px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10.5px;
+  overflow: hidden;
+  /***** Check Box *****/
+}
+main .menu .card-menu .card-content {
+  display: grid;
+  grid-template-rows: 26px 26px;
+  grid-template-columns: 90% 10%;
+  align-items: center;
+  padding: 15px;
+  transition: 500ms;
+}
+main .menu .card-menu .card-content p {
+  margin: unset;
+}
+main .menu .card-menu .card-content :not(.price) {
+  overflow: hidden;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+}
+main .menu .card-menu .card-content :first-child {
+  font-size: 16px;
+  font-weight: 600;
+}
+main .menu .card-menu .card-content :nth-child(2) {
+  font-size: 14px;
+}
+main .menu .card-menu .card-content :last-child {
+  grid-row-start: 1;
+  grid-column-start: 2;
+  grid-row-end: 3;
+  align-self: flex-end;
+  justify-self: end;
+}
+main .menu .card-menu i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: -60px;
+  top: 0;
+  width: 59px;
+  height: 100%;
+  background: rgb(153, 226, 208);
+  color: rgb(255, 255, 255);
+  transition: 500ms;
+}
+main .menu .card-menu input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: unset;
+  opacity: 0;
+  z-index: 1;
+}
+main .menu .card-menu input:checked ~ i {
+  right: 0;
+}
+main .menu .card-menu input:checked ~ .card-content {
+  padding-right: 74px;
+}
+main button {
+  width: 180px;
+  height: 50px;
+  border-radius: 25px;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(355deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
+  margin: 40px 0px;
+  border: rgb(53, 53, 53);
+  color: rgb(255, 255, 255);
+  transition: 100ms;
+}
+main button:hover {
+  background: linear-gradient(335deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.15) 100%), linear-gradient(201deg, #9356DC -5.2%, #FF79DA 110.74%);
+  transform: scale(105%);
+}
+
+footer {
+  background: rgb(53, 53, 53);
+  padding: 22px 25px;
+}
+footer img {
+  filter: invert(1);
+}
+
+.footer-link {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.footer-link a {
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+@media (min-width: 767.98px) {
+  body {
+    background: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  header {
+    width: 100%;
+    grid-template-columns: 14% 70%;
+    padding: 13px 17px 15px 17px;
+  }
+  header img {
+    width: 20%;
+  }
+  header a {
+    margin-left: 17px;
+  }
+  .background-img {
+    height: 345px;
+    object-fit: cover;
+  }
+  /********** Main Section **********/
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(234, 234, 234);
+    position: relative;
+    width: clamp(766px, 1055px, 100%);
+    top: -40px;
+    padding-bottom: 40px;
+  }
+  main .main-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    padding-top: 50px;
+    padding-bottom: 40px;
+  }
+  main .main-title h2 {
+    font-size: 28px;
+  }
+  main .main-title .heart-btn {
+    top: 15px;
+  }
+  main .menu {
+    width: 70%;
+  }
+  footer {
+    width: 100%;
+    margin-top: -40px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 50px;
+    padding: 30px 25px;
+    box-sizing: border-box;
+  }
+  footer img {
+    width: clamp(137px, 8%, 137px);
+  }
+  .footer-link {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+}
 
 /*# sourceMappingURL=restaurant.css.map */

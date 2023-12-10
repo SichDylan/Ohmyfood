@@ -1,0 +1,374 @@
+@import "font";
+@import "anim";
+@import "mixin";
+
+/***** M O B I L E   V E R S I O N S **********/
+
+/***** General **********/
+
+* {
+  // box-shadow: 0 0 0 1px red inset;
+}
+
+body {
+  margin: $no-margin;
+  background: $grey-2;
+}
+
+/********** Header **********/
+
+header {
+  position: relative;
+  display: grid;
+  grid-template-columns: 10% 90%;
+  align-items: center;
+
+  padding: 14px 89px 13px 17px;
+
+  background-color: $white;
+
+  z-index: 3;
+
+  img {
+    width: 45%;
+    justify-self: center;
+  }
+
+  .fa-arrow-left {
+    text-decoration: none;
+    color: black;
+    justify-self: start;
+  }
+}
+
+.background-img {
+  position: relative;
+  width: 100%;
+
+  background-position-y: center;
+
+  z-index: 1;
+}
+
+/********** Main Section **********/
+
+main {
+  border-radius: 40px 40px 0px 0px;
+  background: $grey-2;
+
+  position: relative;
+  top: -40px;
+  z-index: 3;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 0px 13px;
+
+  .main-title {
+    padding: 32px 5px 20px 5px;
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    h2 {
+      font-family: $shrikhand;
+      font-weight: 200;
+      font-size: 24px;
+      text-wrap: nowrap;
+
+      margin: $no-margin;
+    }
+
+    /***** Heart Button *****/
+
+    .heart-btn {
+      position: relative;
+
+      i {
+        display: flex;
+        align-items: center;
+      }
+
+      input {
+        z-index: 3;
+        opacity: 0;
+      }
+
+      i,
+      input {
+        position: absolute;
+        bottom: 3px;
+        right: 20px;
+        margin: $no-margin;
+        width: 26px;
+        height: 26px;
+      }
+
+      input:checked {
+        &~.fill {
+          display: flex;
+
+        }
+
+        &~.empty {
+          display: none;
+        }
+      }
+
+      .fill {
+        display: none;
+        background: $gradient;
+        transform-origin: bottom;
+        background-size: 100% 0%;
+        background-position-y: 26px;
+        background-repeat: no-repeat;
+
+        animation: heartCheck 0.75s forwards;
+        @include webkit-clip(text, transparent);
+      }
+    }
+  }
+
+  /********** Menu Sections **********/
+  .menu {
+    font-family: $roboto;
+    padding: 0 13px;
+    width: 100%;
+    box-sizing: border-box;
+    opacity: 0;
+    
+    ;
+    h3 {
+
+      font-size: 18px;
+      font-weight: 200;
+      border-bottom: 3px solid $light-green;
+      width: 40px;
+    }
+
+
+    /***** Card *****/
+    .card-menu {
+      position: relative;
+      background-color: $white;
+      border-radius: 15.043px;
+      box-shadow: 0px 4.01149px 15.0431px 0px rgba(0, 0, 0, 0.1);
+      margin-bottom: 10.5px;
+      overflow: hidden;
+
+      .card-content {
+        display: grid;
+        grid-template-rows: 26px 26px;
+        grid-template-columns: 90% 10%;
+        align-items: center;
+
+        padding: 15px;
+
+        transition: 500ms;
+
+        p {
+          margin: $no-margin;
+        }
+
+        :not(.price) {
+          overflow: hidden;
+          text-wrap: nowrap;
+          text-overflow: ellipsis;
+        }
+
+        :first-child {
+          font-size: 16px;
+          font-weight: 600;
+        }
+
+        :nth-child(2) {
+          font-size: 14px;
+        }
+
+        :last-child {
+          grid-row-start: 1;
+          grid-column-start: 2;
+
+          grid-row-end: 3;
+          align-self: flex-end;
+          justify-self: end;
+        }
+      }
+
+      /***** Check Box *****/
+      i {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: absolute;
+        right: -60px;
+        top: 0;
+
+        width: 59px;
+        height: 100%;
+
+        background: $light-green;
+        color: $white;
+
+        transition: 500ms;
+      }
+
+      input {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin: $no-margin;
+
+        opacity: 0;
+
+        z-index: 1;
+      }
+
+      input:checked {
+        &~i {
+          right: 0;
+        }
+
+        &~.card-content {
+          padding-right: 74px;
+        }
+      }
+    }
+  }
+
+  /***** Button *****/
+  button {
+    width: 180px;
+    height: 50px;
+    border-radius: 25px;
+
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    background: $gradient;
+
+    margin: 40px 0px;
+    border: $grey;
+    color: $white;
+    transition: 100ms;
+  }
+
+  button:hover {
+    background: $gradient-light;
+    transform: scale(105%);
+  }
+}
+
+footer {
+  background: $grey;
+
+  padding: 22px 25px;
+
+  img {
+    filter: invert(1);
+  }
+}
+
+.footer-link {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  a {
+    color: $white;
+    font-weight: 500;
+    text-decoration: none;
+  }
+}
+
+@media (min-width: 767.98px) {
+  body {
+    background: $white;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+  header {
+    width: 100%;
+    grid-template-columns: 14% 70%;
+    padding: 13px 17px 15px 17px;
+
+    img {
+      width: 20%;
+    }
+
+    a {
+      margin-left: 17px;
+    }
+  }
+
+  .background-img {
+    height: 345px;
+    object-fit: cover;
+  }
+
+  /********** Main Section **********/
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: $grey-2;
+    position: relative;
+    width: clamp(766px, 1055px, 100%);
+    top: -40px;
+    padding-bottom: 40px;
+
+    .main-title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 70px;
+
+      padding-top: 50px;
+      padding-bottom: 40px;
+
+      h2 {
+        font-size: 28px;
+      }
+
+      .heart-btn {
+        top: 15px;
+      }
+    }
+
+    .menu {
+      width: 70%;
+    }
+  }
+
+  footer {
+    width: 100%;
+
+    margin-top: -40px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 50px;
+
+    padding: 30px 25px;
+
+    box-sizing: border-box;
+  }
+
+  footer img {
+    width: clamp(137px, 8%, 137px);
+  }
+
+  .footer-link {
+    flex-direction: row;
+    align-items: center;
+
+    gap: 10px;
+  }
+}
