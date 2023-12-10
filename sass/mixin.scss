@@ -1,2 +1,7 @@
+@mixin webkit-clip($text, $transparent){
+    background-clip: $text;
+    -webkit-background-clip: $text;
+    -moz-background-clip: $text;
 
-
+    -webkit-text-fill-color: $transparent;
+}
