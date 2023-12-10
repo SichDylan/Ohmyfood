@@ -20,6 +20,7 @@
   }
   100% {
     opacity: 0;
+    display: none;
   }
 }
 svg :nth-child(1) {
