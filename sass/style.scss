@@ -235,7 +235,53 @@ header {
         }
     }
 
-   
+    .heart-btn {
+        position: relative;
+  
+        i {
+          display: flex;
+          align-items: center;
+        }
+  
+        input {
+          z-index: 3;
+          opacity: 0;
+        }
+  
+        i,
+        input{
+          position: absolute;
+          bottom: 30px;
+          right: 20px;
+          margin: $no-margin;
+          width: 26px;
+          height: 26px;
+        }
+  
+        input:checked {
+          &~.fill {
+            display: flex;
+           
+          }
+  
+          &~.empty {
+            display: none;
+          }
+        }
+  
+        .fill {
+          display: none;
+          background: $gradient;
+          transform-origin: bottom;
+          background-size: 100% 0%;
+          background-position-y:20px; 
+          background-repeat: no-repeat;
+  
+          animation: heartCheck 0.75s forwards;
+         @include webkit-clip(text, transparent);
+        }
+      }
+
 }
 
 /*Footer*/

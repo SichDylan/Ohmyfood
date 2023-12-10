@@ -1,0 +1,19 @@
+/*********************************************/
+
+/*             A N I M A T I O N             */
+
+/*********************************************/
+
+
+@import "variable";
+
+/********* HEART *********/
+@keyframes heartCheck {
+
+    100% {
+        background-position-Y: 0;
+
+        background-size: 100% 100%;
+    }
+}
+
